@@ -1,9 +1,10 @@
-/* Global styles */
+/* === Knowvio Dynamic Neon Theme === */
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #f7f9fb;
-  color: #1c1c1c;
+  background: #111827; /* Deep charcoal */
+  color: #ffffff;
   scroll-behavior: smooth;
 }
 
@@ -13,17 +14,18 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 10%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(17, 24, 39, 0.8);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  backdrop-filter: blur(8px);
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #2f80ed;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00f0ff;
+  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -34,33 +36,37 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: #cbd5e1;
   font-weight: 500;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #2f80ed;
+  color: #ff6f61;
 }
 
 /* Hero */
 .hero {
-  background: linear-gradient(to right, #2f80ed, #56ccf2);
+  background: linear-gradient(135deg, #7f00ff, #00f0ff);
   color: white;
   text-align: center;
-  padding: 100px 20px 60px;
+  padding: 100px 20px 80px;
+  animation: glow-in 1s ease-out forwards;
 }
 
 .hero-text h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
 }
 
 .hero-text p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 30px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  color: #e5e5e5;
 }
 
 .cta {
@@ -68,37 +74,49 @@ nav {
   margin: 10px;
   padding: 12px 25px;
   background: #ffffff;
-  color: #2f80ed;
+  color: #7f00ff;
   font-weight: 600;
   text-decoration: none;
   border-radius: 30px;
-  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px #ffffff50;
+  transition: all 0.3s ease;
 }
 
 .cta:hover {
-  background: #e2e2e2;
+  background: #ff6f61;
+  color: white;
+  box-shadow: 0 0 20px #ff6f61aa;
 }
 
 .cta.secondary {
   background: transparent;
-  border: 2px solid #fff;
-  color: white;
+  border: 2px solid #ffffff;
+  color: #ffffff;
 }
 
 .cta.secondary:hover {
   background: rgba(255,255,255,0.1);
+  color: #00f0ff;
+  border-color: #00f0ff;
 }
 
 /* Sections */
 .section {
   padding: 80px 10%;
   text-align: center;
+  background-color: #1f2937;
+}
+
+.section:nth-child(even) {
+  background-color: #111827;
 }
 
 .section h2 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin-bottom: 30px;
-  color: #2f80ed;
+  background: linear-gradient(90deg, #7f00ff, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .cards {
@@ -109,29 +127,33 @@ nav {
 }
 
 .card {
-  background: white;
+  background: rgba(255, 255, 255, 0.05);
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  border: 1px solid #2f80ed22;
+  box-shadow: 0 0 10px rgba(127, 0, 255, 0.1);
+  backdrop-filter: blur(8px);
   font-weight: 500;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 20px #00f0ff55;
+  border-color: #00f0ff66;
 }
 
 /* Footer */
 footer {
-  background: #2f80ed;
-  color: white;
+  background: #0f172a;
+  color: #cbd5e1;
   padding: 20px;
   text-align: center;
   font-size: 0.9rem;
+  border-top: 1px solid #334155;
 }
 
-/* Animations */
+/* Fade-in animation */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -158,4 +180,17 @@ footer {
     flex-direction: column;
   }
 }
+
+/* Entry glow animation */
+@keyframes glow-in {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
