@@ -1,76 +1,161 @@
-/* style.css – Knowvio Website Styles */
-
+/* Global styles */
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #fdfdfd;
-  color: #222;
-  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  background: #f7f9fb;
+  color: #1c1c1c;
+  scroll-behavior: smooth;
 }
 
-header {
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: rgba(255, 255, 255, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2f80ed;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #2f80ed;
+}
+
+/* Hero */
+.hero {
   background: linear-gradient(to right, #2f80ed, #56ccf2);
   color: white;
   text-align: center;
-  padding: 60px 20px;
+  padding: 100px 20px 60px;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 1.2rem;
+.hero-text h1 {
+  font-size: 2.8rem;
   margin-bottom: 20px;
 }
 
-header a {
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta {
   display: inline-block;
   margin: 10px;
-  padding: 10px 20px;
-  background: white;
+  padding: 12px 25px;
+  background: #ffffff;
   color: #2f80ed;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background 0.3s, color 0.3s;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
 }
 
-header a:hover {
-  background: #e0e0e0;
-  color: #1a56d3;
+.cta:hover {
+  background: #e2e2e2;
 }
 
-section {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
+.cta.secondary {
+  background: transparent;
+  border: 2px solid #fff;
+  color: white;
+}
+
+.cta.secondary:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Sections */
+.section {
+  padding: 80px 10%;
   text-align: center;
 }
 
-section h2 {
+.section h2 {
   font-size: 2rem;
+  margin-bottom: 30px;
   color: #2f80ed;
-  margin-bottom: 20px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
 }
 
-ul li {
-  padding: 10px 0;
-  font-size: 1.1rem;
-  border-bottom: 1px solid #ddd;
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  font-weight: 500;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Footer */
 footer {
   background: #2f80ed;
   color: white;
-  text-align: center;
   padding: 20px;
-  margin-top: 40px;
+  text-align: center;
   font-size: 0.9rem;
 }
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+}
+
