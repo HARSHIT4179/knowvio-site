@@ -3,35 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Knowvio – Academic Help Platform</title>
+  <title>Knowvio – Academic Help, Globally</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <h1>Not Just Tutors. Your Academic Avengers.</h1>
-    <p>From tutoring to projects — get matched with verified experts, instantly.</p>
-    <a href="#services">Post a Requirement</a>
-    <a href="#tutors">Become a Tutor</a>
+  <header class="hero">
+    <nav>
+      <div class="logo">Knowvio</div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#join">Become a Tutor</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-text">
+      <h1>Not Just Tutors. Your Academic Avengers.</h1>
+      <p>Global tutoring, assignments, and project help — powered by experts and smart matching.</p>
+      <a href="#services" class="cta">Post a Requirement</a>
+      <a href="#join" class="cta secondary">Become a Tutor</a>
+    </div>
   </header>
 
-  <section id="services">
+  <section id="services" class="section fade-in">
     <h2>What We Offer</h2>
-    <ul>
-      <li>Live Tutoring</li>
-      <li>Assignment Help</li>
-      <li>Project Completion</li>
-      <li>Company Projects</li>
-      <li>Homework Doubt Solving</li>
-    </ul>
+    <div class="cards">
+      <div class="card">Live Tutoring</div>
+      <div class="card">Assignment Help</div>
+      <div class="card">Project Completion</div>
+      <div class="card">Company Projects</div>
+      <div class="card">Homework Doubt Solving</div>
+    </div>
   </section>
 
-  <section id="tutors">
-    <h2>Join Knowvio</h2>
-    <p>Become a part of our growing educator network. Flexible. Impactful. Global.</p>
+  <section id="join" class="section fade-in">
+    <h2>Become a Knowvio Tutor</h2>
+    <p>Join our verified network of educators making a difference across the globe.</p>
+    <a href="#" class="cta">Apply Now</a>
+  </section>
+
+  <section id="contact" class="section fade-in">
+    <h2>Get In Touch</h2>
+    <p>Email us at <a href="mailto:team@knowvio.com">team@knowvio.com</a></p>
   </section>
 
   <footer>
     <p>© 2025 Knowvio. Built with ❤️ on GitHub Pages.</p>
   </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fader => observer.observe(fader));
+  </script>
 </body>
 </html>
+
